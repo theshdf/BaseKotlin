@@ -17,5 +17,4 @@ open class KtViewModel : ViewModel(){
         return ldUser
     }
     //todo 从网络获取数据
-
     }

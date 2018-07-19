@@ -1,8 +1,8 @@
-package `fun`.shdf.basekotlin
+package `fun`.shdf.basekotlin.ui
 
+import `fun`.shdf.basekotlin.R
 import `fun`.shdf.basekotlin.viewmodel.KtViewModel
 import `fun`.shdf.basekotlin.viewmodel.ReadViewModel
-import `fun`.shdf.basekotlin.viewmodel.UserViewModel
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
