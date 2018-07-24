@@ -1,6 +1,7 @@
-package fun.shdf.basekotlin.bean;
+package fun.shdf.basekotlin.pojo;
 
 import java.io.Serializable;
+
 
 public class User implements Serializable{
     private String name;

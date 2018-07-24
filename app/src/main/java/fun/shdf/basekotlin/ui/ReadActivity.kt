@@ -2,12 +2,14 @@ package `fun`.shdf.basekotlin.ui
 
 import `fun`.shdf.basekotlin.R
 import `fun`.shdf.basekotlin.base.MyAdapter
-import `fun`.shdf.basekotlin.bean.ReadBean
-import `fun`.shdf.basekotlin.bean.ResultBean
+import `fun`.shdf.basekotlin.pojo.ResultBean
+import `fun`.shdf.basekotlin.view.dialog.HelloWorldDialog
 import `fun`.shdf.basekotlin.viewmodel.ReadViewModel
+import android.app.Dialog
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_read.*
@@ -16,6 +18,7 @@ class ReadActivity : AppCompatActivity() {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var readViewModel: ReadViewModel
     private lateinit var readDatas: MutableList<ResultBean>
+    private var dd: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +29,9 @@ class ReadActivity : AppCompatActivity() {
         recycler.layoutManager = linearLayoutManager
         recycler.adapter = MyAdapter(readDatas)
         (recycler.adapter)?.notifyDataSetChanged()
-        readViewModel = ViewModelProviders.of(this).get(ReadViewModel::class.java)
+        readViewModel = ViewModelProviders.of(this)[ReadViewModel::class.java]
+        showDialog()
+       // showDialogFragment()
     }
 
     /**
@@ -38,11 +43,26 @@ class ReadActivity : AppCompatActivity() {
             readDatas.addAll(it!!.results)
             recycler.adapter.let { it?.notifyDataSetChanged() }
         })
-        recycler.setOnClickListener{ }
+        recycler.setOnClickListener { }
+        recycler.performClick()
     }
 
     override fun onResume() {
         super.onResume()
         getResult()
     }
+
+    fun showDialog() {
+        dd = Dialog(this)
+        dd?.setContentView(R.layout.dialog)
+        dd?.show()
+    }
+
+    fun showDialogFragment() {
+        var hello: HelloWorldDialog = HelloWorldDialog()
+        var transition: FragmentTransaction =  supportFragmentManager.beginTransaction()
+        transition.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        hello.show(transition,"hello")
+    }
+
 }

@@ -4,7 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import fun.shdf.basekotlin.bean.User;
+import fun.shdf.basekotlin.pojo.User;
 
 /**
  * 1. 给ui层赋值

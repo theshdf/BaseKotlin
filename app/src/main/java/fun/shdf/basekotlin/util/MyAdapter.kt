@@ -1,9 +1,8 @@
 package `fun`.shdf.basekotlin.util
 
-import `fun`.shdf.basekotlin.bean.ResultBean
+import `fun`.shdf.basekotlin.pojo.ResultBean
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
-import javax.xml.transform.Result
 
 class MyAdapter(var datas: List<ResultBean>) : RecyclerView.Adapter<MyViewHolder>() {
 

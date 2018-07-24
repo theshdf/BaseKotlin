@@ -1,6 +1,6 @@
 package `fun`.shdf.basekotlin.viewmodel
 
-import `fun`.shdf.basekotlin.bean.MyUser
+import `fun`.shdf.basekotlin.pojo.MyUser
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel

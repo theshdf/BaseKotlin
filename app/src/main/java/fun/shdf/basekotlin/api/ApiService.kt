@@ -1,6 +1,6 @@
 package `fun`.shdf.basekotlin.api
 
-import `fun`.shdf.basekotlin.bean.ReadBean
+import `fun`.shdf.basekotlin.pojo.ReadBean
 import io.reactivex.Observable
 import retrofit2.http.GET
 

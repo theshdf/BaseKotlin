@@ -1,7 +1,6 @@
 package `fun`.shdf.basekotlin.base
 
-import `fun`.shdf.basekotlin.bean.ReadBean
-import `fun`.shdf.basekotlin.bean.ResultBean
+import `fun`.shdf.basekotlin.pojo.ResultBean
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.TextView

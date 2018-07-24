@@ -5,6 +5,7 @@ import `fun`.shdf.basekotlin.viewmodel.KtViewModel
 import `fun`.shdf.basekotlin.viewmodel.ReadViewModel
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,5 +30,10 @@ class MainActivity : AppCompatActivity() {
             tv.setText(""+it?.error)
 
         })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
     }
 }
